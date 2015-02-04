@@ -3,10 +3,6 @@ class PicturesController < ApplicationController
 		@pictures = Picture.all
 	end
 
-	def show
-		@picture = Picture.find(params[:id])
-	end
-
 	def new
 		@picture = Picture.new
 	end
@@ -27,6 +23,24 @@ class PicturesController < ApplicationController
 
 		def picture_parms
 			params.require(:picture).permit(:artist, :title, :url)
+		end
+	end
+
+	def show
+		@picture = Picture.find(params[:id])
+	end
+
+	def edit
+		@picture = Picture.find(params[:id])
+	end
+
+	def update
+		@picture = Picture.find(params[:id])
+
+		if @picture.update_attributes(picture_params)
+			redirect_to "#{pictures_url}/#{@picture.id}"
+		else
+			render :edit
 		end
 	end
 end

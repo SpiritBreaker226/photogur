@@ -2,32 +2,31 @@ Rails.application.routes.draw do
   # Default
 
   root 'pictures#index'
-  get 'pictures' => 'pictures#index'
 
-  # Create
+  resources :pictures
 
-  post 'pictures' => 'pictures#create'
-  get 'pictures/new' => 'pictures#new'
+  # resources :pictures creates all of those routes
+  # in the background saving time
 
-  # Display
+  # get 'pictures' => 'pictures#index'
 
-  get 'pictures/:id' => 'pictures#show', as: 'picture'
+  # # Create
 
-  # Edit
+  # get 'pictures/new' => 'pictures#new'
+  # post 'pictures' => 'pictures#create'
+
+  # # Read
+
+  # get 'pictures/:id' => 'pictures#show', as: 'picture'
+
+  # # Edit
   
-  get 'pictures/:id/edit' => 'pictures#edit', as: 'edit_picture'
-  patch 'pictures/:id' => 'pictures#update'
+  # get 'pictures/:id/edit' => 'pictures#edit', as: 'edit_picture'
+  # patch 'pictures/:id' => 'pictures#update'
 
-  # Delete
+  # # Delete
   
-  delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture"
-
-
-
-
-
-
-
+  # delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture"
 
 
 

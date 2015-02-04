@@ -18,12 +18,6 @@ class PicturesController < ApplicationController
 			# otherwise render the view associated with the action :new (i.e. new.html.erb)
 			render :new
 		end
-
-		private
-
-		def picture_parms
-			params.require(:picture).permit(:artist, :title, :url)
-		end
 	end
 
 	def show
@@ -42,5 +36,11 @@ class PicturesController < ApplicationController
 		else
 			render :edit
 		end
+	end
+	
+	private
+
+	def picture_params
+		params.require(:picture).permit(:artist, :title, :url)
 	end
 end

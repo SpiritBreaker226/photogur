@@ -2,7 +2,7 @@
 <%= link_to "New Pictures", "#{pictures_url}/new" %>
 
 <ul>
-	<% @most_recent_pictures.each do |picture|  %>
+	<% @most_recent_five.each do |picture|  %>
 		<li><%= picture.title %></li>
 	<% end %>
 </ul>

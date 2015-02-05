@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
 	def index
-		@pictures = Picture.most_recent_five
+		@most_recent_five = Picture.most_recent_five
 	end
 
 	def new

@@ -5,4 +5,10 @@
 	<% @most_recent_five.each do |picture|  %>
 		<li><%= picture.title %></li>
 	<% end %>
+	<br><br>
+	Past Picture Count: <%= Picture.created_before(@created_before).count %>
+	<br><br>
+	<% @past_pictures.each do |picture|  %>
+		<li><%= picture.title %></li>
+	<% end %>
 </ul>

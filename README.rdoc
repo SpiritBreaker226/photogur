@@ -1,4 +1,4 @@
 == Photogur
 === Bitmaker: Week 3
 
-In the Tuesday assignment, we created our first Rails application, which displays photos and allows for new photos to be added to the application.
+For the Tuesday assignment, we created our first Rails application, which displays photos and allows for new photos to be added to the application.
